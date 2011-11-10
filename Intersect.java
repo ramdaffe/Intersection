@@ -32,7 +32,8 @@ public class Intersect {
         int delay = 5;
         TrafficLight T2 = new TrafficLight(false,false,20);
         T2.NS = false;                                   //T2 is for East-West traffic
-        while (counter <= turns) {
+        int current = 0;
+        /*while (counter <= turns) {
             if (counter == delay){
                 T2.Red = true;
                 T2.duration --;
@@ -43,11 +44,22 @@ public class Intersect {
                 Move(L1,C1,1);
                 PrintStats(counter,delay,T2.duration);
                 counter ++;
+                current ++;
             } else {
                 Move (L1,C1,1);
                 PrintStats(counter,delay,T2.duration);
                 counter ++;
+                current ++;
+            }*/
+        while (counter <= turns) {
+            if ((counter >= delay) && (delay <= (T2.duration+delay))){
+                Move(L1,C1,0);
+                PrintStats(counter,delay,T2.duration);
+            } else {
+                Move(L1,C1,1);
+                PrintStats(counter,delay,T2.duration);
             }
+            counter++;
         }
     }
     
