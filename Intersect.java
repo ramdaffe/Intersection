@@ -30,34 +30,34 @@ public class Intersect {
         /*for this test, the light will turn red for 10 turn after the car has moved west to east for 5 turn*/
         int turns = 20;                                  //total turns : 20
         int delay = 5;
-        TrafficLight T2 = new TrafficLight(false,false,20);
+        TrafficLight T2 = new TrafficLight(false,false,10);
         T2.NS = false;                                   //T2 is for East-West traffic
-        int current = 0;
         /*while (counter <= turns) {
-            if (counter == delay){
-                T2.Red = true;
-                T2.duration --;
-                Move(L1,C1,0);
-                PrintStats(counter,delay,T2.duration);
-                counter ++;
-            } else if (T2.duration == 0) {
-                Move(L1,C1,1);
-                PrintStats(counter,delay,T2.duration);
-                counter ++;
-                current ++;
-            } else {
-                Move (L1,C1,1);
-                PrintStats(counter,delay,T2.duration);
-                counter ++;
-                current ++;
-            }*/
-        while (counter <= turns) {
             if ((counter >= delay) && (delay <= (T2.duration+delay))){
                 Move(L1,C1,0);
                 PrintStats(counter,delay,T2.duration);
             } else {
                 Move(L1,C1,1);
                 PrintStats(counter,delay,T2.duration);
+            }
+            counter++;
+        }*/
+        while (counter <= turns) {
+            //red light duration: turn 5 thru 15
+            if ((counter > delay) && (counter < (T2.duration+delay))){
+                T2.Red = true;
+            }
+            if (counter == 15) { //this is just a temporary value
+                T2.Red = false;
+            }
+            if (C1.xpos == I.EWborder){
+                if (T2.Red) {
+                    Move(L1,C1,0);
+                } else {
+                    Move(L1,C1,1);
+                }
+            } else {
+                Move(L1,C1,1);
             }
             counter++;
         }
