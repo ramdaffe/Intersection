@@ -6,7 +6,7 @@ package intersect;
 
 /**
  *
- * @author skarta
+ * @author RAMDA YANURZHA
  */
 public class Car {
     int xpos;

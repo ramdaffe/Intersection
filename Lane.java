@@ -6,7 +6,7 @@ package intersect;
 import java.util.Scanner;
 /**
  *
- * @author skarta
+ * @author RAMDA YANURZHA
  */
 public class Lane {
     String[][] lanematrix;
