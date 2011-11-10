@@ -85,6 +85,9 @@ public class Lane {
                     System.out.print(L.lanematrix[m][n]);
                 }
             }
+        for (int n = 0;n<Lane.YSIZE;n++){
+            System.out.print("#");
+        }
     }
     
     

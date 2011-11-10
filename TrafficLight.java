@@ -11,10 +11,13 @@ package intersect;
 public class TrafficLight {
     boolean NS;
     boolean Red;
+    int duration;
+
     
-    public void TrafficLight(){
-    NS = true;
-    Red = true;      
+    TrafficLight(boolean NSFlag, boolean color, int times){
+        NS = NSFlag;
+        Red = color;
+        duration = times;
 }
     
     public void Switch(TrafficLight L1, TrafficLight L2){
