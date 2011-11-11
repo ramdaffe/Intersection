@@ -5,7 +5,7 @@
 package intersect;
 /**
  *
- * @author RAMDA YANURZHA
+ * @author RAMDA YANURZHA 12644700
  */
 public class Intersect {
     static int counter; //global cycle counter

@@ -6,7 +6,7 @@ package intersect;
 
 /**
  *
- * @author RAMDA YANURZHA
+ * @author RAMDA YANURZHA 12644700
  */
 public class TrafficLight {
     boolean NS;
