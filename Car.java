@@ -11,6 +11,7 @@ package intersect;
 public class Car {
     int xpos;
     int ypos;
+    Direction Cardir;
     
     public Car(int x, int y){
         xpos = x;
@@ -19,5 +20,9 @@ public class Car {
     
     public String DrawCar (Car C){
         return "c";
+    }
+    
+    public boolean IsOnBorder (Car C, Intersect I){
+        return (C.xpos == I.EWborder);
     }
 }

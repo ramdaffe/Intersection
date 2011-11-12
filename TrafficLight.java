@@ -9,13 +9,13 @@ package intersect;
  * @author RAMDA YANURZHA 12644700
  */
 public class TrafficLight {
-    boolean NS;
+    Direction TLDir;
     boolean Red;
     int duration;
 
     
-    TrafficLight(boolean NSFlag, boolean color, int times){
-        NS = NSFlag;
+    TrafficLight(Direction dir, boolean color, int times){
+        TLDir = dir;
         Red = color;
         duration = times;
 }
