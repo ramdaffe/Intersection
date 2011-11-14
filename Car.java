@@ -13,9 +13,15 @@ public class Car {
     int ypos;
     Direction Cardir;
     
-    public Car(int x, int y){
-        xpos = x;
-        ypos = y;
+    public Car(Direction D, Lane L){
+        Cardir = D;
+        if (D.EW = true){
+            xpos = 0;
+            ypos = L.getInitPosV(L);
+        } else {
+            ypos = 0;
+            xpos = L.getInitPosH(L);
+        }
     }
     
     public String DrawCar (Car C){
@@ -23,6 +29,6 @@ public class Car {
     }
     
     public boolean IsOnBorder (Car C, Intersect I){
-        return (C.xpos == I.EWborder);
+        return ((C.xpos == I.EWborder) || (C.xpos == I.NSborder));
     }
 }

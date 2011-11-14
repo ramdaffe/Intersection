@@ -12,6 +12,7 @@ public class TrafficLight {
     Direction TLDir;
     boolean Red;
     int duration;
+ 
 
     
     TrafficLight(Direction dir, boolean color, int times){
@@ -29,4 +30,6 @@ public class TrafficLight {
             L2.Red = false;
         }
     }
+    
+        
 }

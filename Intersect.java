@@ -28,12 +28,14 @@ public class Intersect {
         
         /*trying new test routine*/
         /*for this test, the light will turn red for 10 turn after the car has moved west to east for 5 turn*/
-        Car C1 = new Car(0,L1.getInitPosV(L1));         //create a new car with valid initial position
         Direction D = new Direction();
         D.EW = true;
+        Car C1 = new Car(D,L1);         //create a new car with valid initial position
         C1.Cardir = D;
         TrafficLight T2 = new TrafficLight(D,false,0);
         T2.TLDir = D;
+        LetThemRun(L1,C1,I1,T2,D);
+        /*
         while (counter <= I1.turns) {
             //red light duration: turn 5 thru 15
             //if ((counter > delay) && (counter < (T2.duration+delay))){
@@ -57,9 +59,36 @@ public class Intersect {
             //System.out.print(T2.Red);
             counter++;
 
-        }
+        }*/
     }
     
+    
+    public static void LetThemRun(Lane L, Car C, Intersect I, TrafficLight T, Direction D){
+        while (counter <= I.turns) {
+            //red light duration: turn 5 thru 15
+            //if ((counter > delay) && (counter < (T2.duration+delay))){
+            if (counter > 2){
+                T.Red = true;
+            }
+            if (counter > 13) { //this is just a temporary value
+                T.Red = false;
+            }
+            if (C.IsOnBorder(C, I)){
+                if (T.Red) {
+                    Move(L,C,0, D);
+                } else {
+                    Move(L,C,1, D);
+                }
+            } else {
+                Move(L,C,1, D);
+            }
+            //PrintStats(counter,T2.duration,delay);
+            //System.out.print(C1.IsOnBorder(C1, I1));
+            //System.out.print(T2.Red);
+            counter++;
+
+        }
+    }
     
     public static void PrintStats(int x, int y, int z){
         System.out.println(x);
